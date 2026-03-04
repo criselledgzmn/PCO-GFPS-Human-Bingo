@@ -1,38 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GFPS Human Bingo</title>
 </head>
-<body>
-<body style="background-color: #f7d6ff; text-align: center;">
+<body style="background-color: #f7d6ff; text-align: center; font-family: sans-serif; padding: 20px;">
+
   <h1>GFPS Human Bingo</h1>
-  
-  <div style="margin-top: 10px;">
-    <h1>How to Print?</h1>
-    <h2>1. Right click the card and Save image as.</h2>
-    <h2>2. Save image.</h2>
-    <h2>3. Open saved File.</h2>
-    <h2>4. Right click and press "Print"</h2>
-  </div>
-</body>
-  <img id="random-image" src="" alt="GFPS Human Bingo" style="max-width: 100%; height: auto;">
+
+  <!-- New Link Section -->
+  <p style="font-size: 1.2rem; font-weight: bold;">
+    Click this link to <a href="" id="download-link" download="bingo-card.png">download the bingo card</a> below
+  </p>
+
+  <!-- The Bingo Card Image -->
+  <img id="random-image" src="" alt="GFPS Human Bingo" style="max-width: 100%; height: auto; border: 2px solid #333; border-radius: 8px;">
 
   <script>
-    // List of image file names (adjust the file names based on your uploads)
-    const images = [ 
-     'Juana Bing0 2026 (1).png', 
-     'Juana Bing0 2026 (0).png',
-
-       // Add as many images as you have uploaded
-    ];
-
-    // Randomly select an image from the list
+    // Logic to set the image source and the download link
+    const images = ["Juana Bing0 2026 (1).png", "Juana Bing0 2026.png"]; // Add your image filenames here
     const randomImage = images[Math.floor(Math.random() * images.length)];
+    
+    const imgElement = document.getElementById('random-image');
+    const linkElement = document.getElementById('download-link');
 
-    // Set the image source to the random image
-    document.getElementById('random-image').src = randomImage;
+    // Update both the image display and the download link destination
+    imgElement.src = randomImage;
+    linkElement.href = randomImage;
   </script>
+
 </body>
 </html>
